@@ -1,10 +1,10 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
     name: "Metric",
 	platforms: [
-		.iOS(.v15)
+		.iOS(.v16)
 	],
     products: [
         .library(
