@@ -9,9 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "Metric",
-            targets: [
-				"Metric"
-			]
+            targets: ["Metric"]
 		)
     ],
     targets: [
