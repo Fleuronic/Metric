@@ -1,6 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct UIKit.CGFloat
+import struct UIKit.UIEdgeInsets
 
 public struct Insets {
 	public let value: CGFloat
@@ -8,6 +9,8 @@ public struct Insets {
 
 // MARK: -
 public extension Insets {
+	static let zero: Self = 0
+
 	struct Horizontal {
 		public let value: CGFloat
 	}
@@ -73,5 +76,20 @@ extension Insets.Vertical: ExpressibleByIntegerLiteral {
 extension Insets.Vertical: ExpressibleByFloatLiteral {
 	public init(floatLiteral: FloatLiteralType) {
 		value = .init(floatLiteral: floatLiteral)
+	}
+}
+
+// MARK: -
+public extension UIEdgeInsets {
+	init(
+		horizontal: Insets.Horizontal,
+		vertical: Insets.Vertical
+	) {
+		self.init(
+			top: vertical.value,
+			left: horizontal.value,
+			bottom: vertical.value,
+			right: horizontal.value
+		)
 	}
 }
