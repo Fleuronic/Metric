@@ -27,11 +27,16 @@ public extension Size {
 }
 
 // MARK: -
+extension Size: Named {}
+
+// MARK: -
 extension Size.Width: ExpressibleByIntegerLiteral {
 	public init(integerLiteral: IntegerLiteralType) {
 		value = .init(integerLiteral)
 	}
 }
+
+extension Size.Width: Named {}
 
 // MARK: -
 extension Size.Height: ExpressibleByIntegerLiteral {
@@ -39,3 +44,5 @@ extension Size.Height: ExpressibleByIntegerLiteral {
 		value = .init(integerLiteral)
 	}
 }
+
+extension Size.Height: Named {}

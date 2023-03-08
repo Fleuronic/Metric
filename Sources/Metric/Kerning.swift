@@ -11,8 +11,16 @@ public struct Kerning {
 }
 
 // MARK: -
+extension Kerning: ExpressibleByIntegerLiteral {
+	public init(integerLiteral: IntegerLiteralType) {
+		value = .init(integerLiteral)
+	}
+}
+
 extension Kerning: ExpressibleByFloatLiteral {
 	public init(floatLiteral: FloatLiteralType) {
 		value = .init(floatLiteral)
 	}
 }
+
+extension Kerning: Named {}

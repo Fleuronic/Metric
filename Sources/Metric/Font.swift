@@ -20,6 +20,8 @@ extension Font.Size: ExpressibleByIntegerLiteral {
 	}
 }
 
+extension Font.Size: Named {}
+
 // MARK: -
 public extension UIFont {
 	var bold: Self {
@@ -32,10 +34,6 @@ public extension UIFont {
 
 	var boldItalic: Self {
 		traits([.traitBold, .traitItalic])
-	}
-
-	func size(_ size: Font.Size) -> Self {
-		.init(descriptor: fontDescriptor, size: size.value)
 	}
 
 	func weight(_ weight: UIFont.Weight) -> Self {
@@ -64,7 +62,7 @@ public extension UIFont {
 		)
 	}
 
-	static func size(_ size: Font.Size) -> UIFont {
-		.systemFont(ofSize: size.value)
+	static func size(named name: Font.Size.Name) -> UIFont {
+		.systemFont(ofSize: name(Font.Size.self).value)
 	}
 }

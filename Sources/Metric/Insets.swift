@@ -21,6 +21,9 @@ public extension Insets {
 }
 
 // MARK: -
+extension Insets: Named {}
+
+// MARK: -
 extension Insets: ExpressibleByIntegerLiteral {
 	public init(integerLiteral: IntegerLiteralType) {
 		value = .init(integerLiteral: integerLiteral)
@@ -56,6 +59,8 @@ extension Insets.Horizontal: ExpressibleByFloatLiteral {
 	}
 }
 
+extension Insets.Horizontal: Named {}
+
 // MARK: -
 public extension Insets.Vertical {
 	static let zero: Self = 0
@@ -78,6 +83,8 @@ extension Insets.Vertical: ExpressibleByFloatLiteral {
 		value = .init(floatLiteral: floatLiteral)
 	}
 }
+
+extension Insets.Vertical: Named {}
 
 // MARK: -
 public extension UIEdgeInsets {

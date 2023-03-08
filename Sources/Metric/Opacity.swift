@@ -24,11 +24,3 @@ extension Opacity: ExpressibleByFloatLiteral {
 		value = .init(floatLiteral)
 	}
 }
-
-// MARK: -
-public extension UIView {
-	var opacity: Opacity {
-		get { .init(value: alpha) }
-		set { alpha = newValue.value }
-	}
-}
