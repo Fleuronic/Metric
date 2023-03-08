@@ -19,11 +19,3 @@ extension Border.Width: ExpressibleByIntegerLiteral {
 		value = .init(integerLiteral)
 	}
 }
-
-// MARK: -
-public extension UIView {
-	var borderWidth: Border.Width {
-		get { .init(value: layer.borderWidth) }
-		set { layer.borderWidth = newValue.value }
-	}
-}
