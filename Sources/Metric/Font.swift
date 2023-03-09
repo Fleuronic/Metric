@@ -1,8 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct UIKit.CGFloat
-import class UIKit.UIFont
-import class UIKit.UIFontDescriptor
+import UIKit
 
 public enum Font {}
 

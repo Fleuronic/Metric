@@ -1,7 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct UIKit.CGFloat
-import class UIKit.UIView
+import struct CoreGraphics.CGFloat
 
 public struct Opacity {
 	public let value: CGFloat

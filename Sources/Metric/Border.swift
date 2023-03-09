@@ -1,8 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct UIKit.CGFloat
-import class UIKit.UIView
-import class UIKit.UITextField
+import struct CoreGraphics.CGFloat
 
 public enum Border {}
 

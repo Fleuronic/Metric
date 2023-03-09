@@ -28,6 +28,8 @@ extension Spacing.Horizontal: ExpressibleByIntegerLiteral {
 	}
 }
 
+extension Spacing.Horizontal: Named {}
+
 // MARK: -
 public extension Spacing.Vertical {
 	static let zero: Self = 0
@@ -40,3 +42,5 @@ extension Spacing.Vertical: ExpressibleByIntegerLiteral {
 		value = .init(integerLiteral)
 	}
 }
+
+extension Spacing.Vertical: Named {}
