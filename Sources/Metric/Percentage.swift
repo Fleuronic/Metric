@@ -9,7 +9,7 @@ public struct Percentage {
 // MARK: -
 public extension Percentage {
 	static let zero: Self = 0
-	static let full: Self = 1
+	static let hundred: Self = 1
 }
 
 // MARK: -

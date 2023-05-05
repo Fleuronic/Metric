@@ -17,3 +17,11 @@ extension Border.Width: ExpressibleByIntegerLiteral {
 		value = .init(integerLiteral)
 	}
 }
+
+// MARK: -
+public extension Styled {
+	func borderWidth(width: (Border.Width.Type) -> Border.Width) -> Self {
+		base.layer.borderWidth = width(Border.Width.self).value
+		return self
+	}
+}

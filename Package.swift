@@ -12,10 +12,13 @@ let package = Package(
             targets: ["Metric"]
 		)
     ],
+	dependencies: [
+		.package(url: "https://github.com/yannickl/DynamicColor", from: "5.0.1")
+	],
     targets: [
         .target(
             name: "Metric",
-            dependencies: []
+            dependencies: ["DynamicColor"]
 		),
         .testTarget(
             name: "MetricTests",

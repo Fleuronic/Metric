@@ -8,7 +8,9 @@ public struct Opacity {
 
 // MARK: -
 public extension Opacity {
-	static let full: Self = 1
+	static let transparent: Self = 0
+	static let translucent: Self = 0.5
+	static let opaque: Self = 1
 }
 
 // MARK: -
