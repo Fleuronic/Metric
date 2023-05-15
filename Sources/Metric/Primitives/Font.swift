@@ -6,9 +6,14 @@ public enum Font {}
 
 // MARK: -
 public extension Font {
-	struct Size {
+	struct Size: Named {
 		public let value: CGFloat
 	}
+}
+
+// MARK: -
+public extension Font.Size {
+	static let `default`: Self = 14
 }
 
 // MARK: -
@@ -17,8 +22,6 @@ extension Font.Size: ExpressibleByIntegerLiteral {
 		value = .init(integerLiteral)
 	}
 }
-
-extension Font.Size: Named {}
 
 // MARK: -
 public extension UIFont {

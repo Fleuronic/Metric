@@ -2,7 +2,7 @@
 
 import struct CoreGraphics.CGFloat
 
-public struct Kerning {
+public struct Kerning: Named {
 	public let value: CGFloat
 
 	public init(value: CGFloat) {
@@ -22,5 +22,3 @@ extension Kerning: ExpressibleByFloatLiteral {
 		value = .init(floatLiteral)
 	}
 }
-
-extension Kerning: Named {}

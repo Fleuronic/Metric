@@ -2,7 +2,7 @@
 
 import UIKit
 
-public struct Insets {
+public struct Insets: Named {
 	public let value: CGFloat
 }
 
@@ -10,17 +10,14 @@ public struct Insets {
 public extension Insets {
 	static let zero: Self = 0
 
-	struct Horizontal {
+	struct Horizontal: Named {
 		public let value: CGFloat
 	}
 
-	struct Vertical {
+	struct Vertical: Named {
 		public let value: CGFloat
 	}
 }
-
-// MARK: -
-extension Insets: Named {}
 
 // MARK: -
 extension Insets: ExpressibleByIntegerLiteral {
@@ -58,8 +55,6 @@ extension Insets.Horizontal: ExpressibleByFloatLiteral {
 	}
 }
 
-extension Insets.Horizontal: Named {}
-
 // MARK: -
 public extension Insets.Vertical {
 	static let zero: Self = 0
@@ -82,8 +77,6 @@ extension Insets.Vertical: ExpressibleByFloatLiteral {
 		value = .init(floatLiteral: floatLiteral)
 	}
 }
-
-extension Insets.Vertical: Named {}
 
 // MARK: -
 public extension UIEdgeInsets {

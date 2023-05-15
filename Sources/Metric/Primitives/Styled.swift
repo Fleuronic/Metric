@@ -6,8 +6,8 @@ import UIKit
 public struct Styled<Base: UIView> {
 	public private(set) var base: Base
 
-	public init() {
-		base = .init()
+	public init(base: Base = .init()) {
+		self.base = base
 	}
 }
 
@@ -19,12 +19,5 @@ public extension Styled {
 			base[keyPath: keyPath] = $0
 			return .init(base: base)
 		}
-	}
-}
-
-// MARK: -
-private extension Styled {
-	init(base: Base) {
-		self.base = base
 	}
 }

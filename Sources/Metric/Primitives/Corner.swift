@@ -8,7 +8,7 @@ public enum Corner {}
 
 // MARK: -
 public extension Corner {
-	struct Radius {
+	struct Radius: Named {
 		public let value: CGFloat
 	}
 }
@@ -22,16 +22,16 @@ extension Corner.Radius: ExpressibleByIntegerLiteral {
 
 // MARK: -
 public extension Styled {
-	func cornerRadius(radius: (Corner.Radius.Type) -> Corner.Radius) -> Self {
-		base.layer.cornerRadius = radius(Corner.Radius.self).value
+	func cornerRadius(named name: Corner.Radius.Name) -> Self {
+		base.layer.cornerRadius = name(Corner.Radius.self).value
 		return self
 	}
 }
 
 // MARK: -
 public extension Styled where Base: UIButton {
-	func cornerRadius(radius: (Corner.Radius.Type) -> Corner.Radius) -> Self {
-		base.configuration?.background.cornerRadius = radius(Corner.Radius.self).value
+	func cornerRadius(named name: Corner.Radius.Name) -> Self {
+		base.configuration?.background.cornerRadius = name(Corner.Radius.self).value
 		return self
 	}
 }

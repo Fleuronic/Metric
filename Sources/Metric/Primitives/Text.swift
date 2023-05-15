@@ -42,3 +42,12 @@ public extension Styled where Base: UITextField {
 		return self
 	}
 }
+
+// MARK: -
+extension UILabel: Text {}
+
+// MARK: -
+extension UITextField: Text {}
+
+// MARK: -
+extension UITextView: Text {}

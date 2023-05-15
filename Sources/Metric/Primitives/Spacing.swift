@@ -8,11 +8,11 @@ public enum Spacing {}
 
 // MARK: -
 public extension Spacing {
-	struct Horizontal {
+	struct Horizontal: Named {
 		public let value: CGFloat
 	}
 
-	struct Vertical {
+	struct Vertical: Named {
 		public let value: CGFloat
 	}
 }
@@ -30,8 +30,6 @@ extension Spacing.Horizontal: ExpressibleByIntegerLiteral {
 	}
 }
 
-extension Spacing.Horizontal: Named {}
-
 // MARK: -
 public extension Spacing.Vertical {
 	static let zero: Self = 0
@@ -44,8 +42,6 @@ extension Spacing.Vertical: ExpressibleByIntegerLiteral {
 		value = .init(integerLiteral)
 	}
 }
-
-extension Spacing.Vertical: Named {}
 
 // MARK: -
 public extension Styled where Base: UIStackView {

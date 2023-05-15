@@ -2,7 +2,7 @@
 
 import struct CoreGraphics.CGFloat
 
-public struct Size {
+public struct Size: Named {
 	public let width: Width
 	public let height: Height
 
@@ -17,17 +17,14 @@ public struct Size {
 
 // MARK: -
 public extension Size {
-	struct Width {
+	struct Width: Named {
 		public let value: CGFloat
 	}
 
-	struct Height {
+	struct Height: Named {
 		public let value: CGFloat
 	}
 }
-
-// MARK: -
-extension Size: Named {}
 
 // MARK: -
 extension Size.Width: ExpressibleByIntegerLiteral {
@@ -36,13 +33,9 @@ extension Size.Width: ExpressibleByIntegerLiteral {
 	}
 }
 
-extension Size.Width: Named {}
-
 // MARK: -
 extension Size.Height: ExpressibleByIntegerLiteral {
 	public init(integerLiteral: IntegerLiteralType) {
 		value = .init(integerLiteral)
 	}
 }
-
-extension Size.Height: Named {}

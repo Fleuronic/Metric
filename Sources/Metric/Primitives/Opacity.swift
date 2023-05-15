@@ -2,7 +2,7 @@
 
 import struct CoreGraphics.CGFloat
 
-public struct Opacity {
+public struct Opacity: Named {
 	public let value: CGFloat
 }
 
@@ -23,5 +23,13 @@ extension Opacity: ExpressibleByIntegerLiteral {
 extension Opacity: ExpressibleByFloatLiteral {
 	public init(floatLiteral: FloatLiteralType) {
 		value = .init(floatLiteral)
+	}
+}
+
+// MARK: -
+public extension Styled {
+	func opacity(named name: Opacity.Name) -> Self {
+		base.alpha = name(Opacity.self).value
+		return self
 	}
 }

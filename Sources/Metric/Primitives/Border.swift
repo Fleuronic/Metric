@@ -6,7 +6,7 @@ public enum Border {}
 
 // MARK: -
 public extension Border {
-	struct Width {
+	struct Width: Named {
 		public let value: CGFloat
 	}
 }
@@ -20,8 +20,8 @@ extension Border.Width: ExpressibleByIntegerLiteral {
 
 // MARK: -
 public extension Styled {
-	func borderWidth(width: (Border.Width.Type) -> Border.Width) -> Self {
-		base.layer.borderWidth = width(Border.Width.self).value
+	func borderWidth(named name: Border.Width.Name) -> Self {
+		base.layer.borderWidth = name(Border.Width.self).value
 		return self
 	}
 }
