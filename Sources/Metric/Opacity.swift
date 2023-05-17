@@ -25,11 +25,3 @@ extension Opacity: ExpressibleByFloatLiteral {
 		value = .init(floatLiteral)
 	}
 }
-
-// MARK: -
-public extension Styled {
-	func opacity(named name: Opacity.Name) -> Self {
-		base.alpha = name(Opacity.self).value
-		return self
-	}
-}

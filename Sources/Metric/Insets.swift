@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
+import struct CoreGraphics.CGFloat
 
 public struct Insets: Named {
 	public let value: CGFloat
@@ -75,39 +75,5 @@ extension Insets.Vertical: ExpressibleByIntegerLiteral {
 extension Insets.Vertical: ExpressibleByFloatLiteral {
 	public init(floatLiteral: FloatLiteralType) {
 		value = .init(floatLiteral: floatLiteral)
-	}
-}
-
-// MARK: -
-public extension UIEdgeInsets {
-	init(
-		horizontal: Insets.Horizontal,
-		vertical: Insets.Vertical
-	) {
-		self.init(
-			top: vertical.value,
-			left: horizontal.value,
-			bottom: vertical.value,
-			right: horizontal.value
-		)
-	}
-}
-
-// MARK: -
-public extension Styled where Base: UIStackView {
-	func horizontalInsets(named name: Insets.Horizontal.Name) -> Self {
-		let insets = name(Insets.Horizontal.self).value
-		base.isLayoutMarginsRelativeArrangement = true
-		base.directionalLayoutMargins.leading = insets
-		base.directionalLayoutMargins.trailing = insets
-		return self
-	}
-
-	func verticalInsets(named name: Insets.Vertical.Name) -> Self {
-		let insets = name(Insets.Vertical.self).value
-		base.isLayoutMarginsRelativeArrangement = true
-		base.directionalLayoutMargins.top = insets
-		base.directionalLayoutMargins.bottom = insets
-		return self
 	}
 }

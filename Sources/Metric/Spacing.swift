@@ -1,7 +1,5 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-
 import struct CoreGraphics.CGFloat
 
 public enum Spacing {}
@@ -40,18 +38,5 @@ public extension Spacing.Vertical {
 extension Spacing.Vertical: ExpressibleByIntegerLiteral {
 	public init(integerLiteral: IntegerLiteralType) {
 		value = .init(integerLiteral)
-	}
-}
-
-// MARK: -
-public extension Styled where Base: UIStackView {
-	func horizontalSpacing(named name: Spacing.Horizontal.Name) -> Self {
-		base.spacing = name(Spacing.Horizontal.self).value
-		return self
-	}
-
-	func verticalSpacing(named name: Spacing.Vertical.Name) -> Self {
-		base.spacing = name(Spacing.Vertical.self).value
-		return self
 	}
 }
