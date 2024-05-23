@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
 	name: "Metric",
 	platforms: [
-		.iOS(.v8)
+		.iOS(.v13)
 	],
 	products: [
 		.library(
